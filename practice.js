@@ -89,14 +89,14 @@ multiply(4, 3, function(answer){
   If it does, invoke the callback with true as the argument. 
   If the name does not exist, invoke the callback with false as the argument.
 */
-function contains(array,name,cb){
-  if (array.indexOf(name) === 0){
-    cb(true);
-  }
-  else {
+function contains(names, checkExist, cb) {
+  for (var i = 0; i < names.length; i++) {
+      if (names[i] === checkExist) {
+        cb(true);
+      }
+    }
     cb(false);
   }
-}
 
 
 // Do not edit the code below.
